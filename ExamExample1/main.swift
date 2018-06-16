@@ -11,19 +11,26 @@ import Foundation
 print("Hello, World!")
 
 var massive = [
-    [3, -3, 4],
-    [1, 2, 12],
-    [5, -2, 11]
+    [3, -3, 4, 50],
+    [1, 2, 12, -1],
+    [5, -2, 11, 4],
+    [2, 11, 5, -4]
 ]
 
 massive.sort {
     var sum0 = 0
-    for item in $0 {
-        sum0 += item
+    for (index, item) in ($0).enumerated() {
+        if (index % 2 != 0)
+        {
+            sum0 += item
+        }
     }
     var sum1 = 0
-    for item in $1 {
-        sum1 += item
+    for (index, item) in $1.enumerated() {
+        if (index % 2 != 0)
+        {
+            sum1 += item
+        }
     }
     return sum0 < sum1
 }
